@@ -1,12 +1,89 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scenes/gameplay.gd" type="Script" id=1]
 [ext_resource path="res://scenes/menu_bg.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui_themes/new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes/gameplay_btn_back.gd" type="Script" id=4]
 
 [node name="gameplay" type="Node"]
 
 script/script = ExtResource( 1 )
 
 [node name="menu_bg" parent="." instance=ExtResource( 2 )]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 480.0
+margin/bottom = 40.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 176.0
+margin/top = 13.0
+margin/right = 233.0
+margin/bottom = 27.0
+text = "Difficulty"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="lbl_difficulty" type="Label" parent="HBoxContainer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 237.0
+margin/top = 13.0
+margin/right = 304.0
+margin/bottom = 27.0
+text = "_difficulty_"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="btn_back" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 3 )
+margin/left = 357.0
+margin/top = 691.0
+margin/right = 457.0
+margin/bottom = 776.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Back"
+flat = false
+script/script = ExtResource( 4 )
+
+[node name="lbl_task" type="RichTextLabel" parent="."]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 127.0
+margin/top = 221.0
+margin/right = 240.0
+margin/bottom = 304.0
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
 
 
